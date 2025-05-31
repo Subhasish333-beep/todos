@@ -8,6 +8,6 @@ export const colors = {
     primary: "#018786",
     white: "#ffffff",
     input: "#301934",
-    red: "#C40233",
+    red: "#DE3163",
     green: "#AFE1AF"
 }

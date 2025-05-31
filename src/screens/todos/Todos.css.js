@@ -39,6 +39,7 @@ export const styles = StyleSheet.create({
         color: '#fff'
     },
     todoItem: {
+        flex: 1,
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
@@ -81,8 +82,61 @@ export const styles = StyleSheet.create({
         color: colors.white
     },
     deleteContainer: {
+        // flex: 0.2,
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 2,
-    }
+    },
+    checkboxContainer: {
+        flex: 0.1
+    },
+    tasktitle: {
+        flex: 0.8
+    },
+    modalOverlay: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        height: '100%',
+        width: '100%',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 10,
+    },
+    modalContainer: {
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        padding: 20,
+        width: '80%',
+        alignItems: 'center',
+    },
+    modalText: {
+        fontSize: 16,
+        marginBottom: 20,
+        textAlign: 'center',
+    },
+    modalButtons: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%',
+    },
+    modalButton: {
+        flex: 1,
+        marginHorizontal: 10,
+        paddingVertical: 10,
+        borderRadius: 5,
+        alignItems: 'center',
+    },
+    cancelButton: {
+        backgroundColor: colors.input,
+    },
+    deleteButton: {
+        backgroundColor: colors.red,
+    },
+    modalButtonText: {
+        color: '#fff',
+        fontWeight: 'bold',
+    },
+
 });
