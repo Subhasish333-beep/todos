@@ -138,5 +138,7 @@ export const styles = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
     },
-
+    disabled: {
+        backgroundColor: colors.disable
+    }
 });

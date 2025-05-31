@@ -5,9 +5,10 @@ export const fonts={
 }
 
 export const colors = {
-    primary: "#018786",
+    primary: "#607d8b",
     white: "#ffffff",
     input: "#301934",
     red: "#DE3163",
-    green: "#AFE1AF"
+    green: "#AFE1AF",
+    disable: "#D3D3D3"
 }

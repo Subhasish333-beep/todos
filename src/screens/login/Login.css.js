@@ -13,6 +13,11 @@ export const styles = StyleSheet.create({
     gap: {
         height: 15
     },
+    errorMessage: {
+        color: colors.red,
+        fontSize:12,
+        fontFamily: fonts.robotoRegular
+    },
     loginText: {
         color: colors.white,
         textAlign: "center",

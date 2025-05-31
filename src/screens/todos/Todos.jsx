@@ -54,7 +54,7 @@ const Todo = () => {
           value={todo}
           onChangeText={setTodo}
         />
-        <CustomButton title={"Add"} onPress={handleAdd} disabled={!todo.trim()} />
+        <CustomButton title={"Add"} style={todo.length ? styles.enabled : styles.disabled} onPress={handleAdd} disabled={ todo.length ? false : true} />
 
         <FlatList
           data={todos}

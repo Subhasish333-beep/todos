@@ -16,14 +16,14 @@ const styles = StyleSheet.create({
   button: {
     width:"100%",
     alignSelf:"center",
-    backgroundColor: '#ffffff',
+    backgroundColor: colors.input,
     paddingVertical: 14,
     borderRadius: 8,
     alignItems: 'center',
     marginTop: 20,
   },
   buttonText: {
-    color: colors.primary,
+    color: colors.white,
     fontSize: 16,
     fontFamily: fonts.robotoBold
   },

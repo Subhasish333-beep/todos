@@ -18,6 +18,7 @@ const LoginSchema = Yup.object().shape({
 const Login = () => {
   const { login } = useContext(AuthContext);
 
+  //login functionality, the value is stored in async storage and the stack is changed
   const onLogin = (values) => {
     const { username, password } = values;
     try {
@@ -50,10 +51,10 @@ const Login = () => {
               iconName="user"
             />
             {touched.username && errors.username && (
-              <Text style={{ color: 'red', marginBottom: 10 }}>{errors.username}</Text>
+              <Text style={styles.errorMessage}>{errors.username}</Text>
             )}
 
-            <View style={styles.gap}/>
+            <View style={styles.gap} />
 
             <CustomInput
               placeholder="Password"
@@ -64,7 +65,7 @@ const Login = () => {
               iconName="lock"
             />
             {touched.password && errors.password && (
-              <Text style={{ color: 'red', marginBottom: 10 }}>{errors.password}</Text>
+              <Text style={styles.errorMessage}>{errors.password}</Text>
             )}
 
             <CustomButton title="Login" onPress={handleSubmit} />
