@@ -29,6 +29,7 @@ const CustomTextInput = ({
         style={styles.input}
         placeholder={placeholder}
         value={value}
+        placeholderTextColor={colors.input}
         onChangeText={onChangeText}
         secureTextEntry={isPassword && !isPasswordVisible}
         autoCapitalize="none"

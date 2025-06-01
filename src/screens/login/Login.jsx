@@ -1,5 +1,5 @@
-import { View, Text, SafeAreaView, Alert } from 'react-native';
-import React, { useContext } from 'react';
+import { View, Text, SafeAreaView, Alert, Animated } from 'react-native';
+import React, { useContext, useEffect, useRef } from 'react';
 import { styles } from './Login.css';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
@@ -17,6 +17,25 @@ const LoginSchema = Yup.object().shape({
 
 const Login = () => {
   const { login } = useContext(AuthContext);
+
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const translateY = useRef(new Animated.Value(30)).current;
+
+  useEffect(() => {
+    Animated.parallel([
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 500,
+        useNativeDriver: true,
+      }),
+      Animated.timing(translateY, {
+        toValue: 0,
+        duration: 500,
+        useNativeDriver: true,
+      }),
+    ]).start();
+  }, []);
+
 
   //login functionality, the value is stored in async storage and the stack is changed
   const onLogin = (values) => {
@@ -42,7 +61,10 @@ const Login = () => {
         onSubmit={onLogin}
       >
         {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
-          <View style={styles.formWrapper}>
+          <Animated.View style={[styles.formWrapper, {
+            opacity: fadeAnim,
+            transform: [{ translateY }],
+          }]}>
             <CustomInput
               placeholder="Username"
               value={values.username}
@@ -69,7 +91,7 @@ const Login = () => {
             )}
 
             <CustomButton title="Login" onPress={handleSubmit} />
-          </View>
+          </Animated.View>
         )}
       </Formik>
     </SafeAreaView>

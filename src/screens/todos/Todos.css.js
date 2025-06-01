@@ -46,6 +46,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 10,
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
+        marginTop: 20
     },
     checkbox: {
         width: 22,
